@@ -6,11 +6,11 @@ const routes = [
     {
         path: "/",
         component: ExampleComponent,
-        name: "home",
+        name: "Főoldal",
     },{
         path: "/second",
         component: Example2,
-        name: "second",
+        name: "Második oldal",
     },
 ];
 
