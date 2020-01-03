@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-      <router-link class="navbar-brand" v-bind:to="{ name: 'Főoldal' }">Laravel BNB</router-link>
+      <router-link class="navbar-brand" v-bind:to="{ name: 'bookables' }">Laravel BNB</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,9 +19,9 @@
           <!-- <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>-->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" v-bind:to="{ name: 'Második oldal' }">Második oldal</router-link>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>

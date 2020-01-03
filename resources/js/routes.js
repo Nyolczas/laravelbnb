@@ -1,17 +1,18 @@
 import VueRouter from 'vue-router';
-import Example2 from './components/Example2.vue';
 import Bookables from './bookables/Bookables';
+import Bookable from './bookable/Bookable';
 
 const routes = [
     {
         path: "/",
         component: Bookables,
-        name: "Főoldal",
-    },{
-        path: "/second",
-        component: Example2,
-        name: "Második oldal",
+        name: "bookables",
     },
+    {
+        path: "/bookable/:id",
+        component: Bookable,
+        name: "bookable",
+    }
 ];
 
 const router = new VueRouter({
