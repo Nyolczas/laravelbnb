@@ -1850,7 +1850,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     itemTitle: String,
-    itemContent: String,
+    itemDescription: String,
     price: Number
   }
 });
@@ -1914,24 +1914,10 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    setTimeout(function () {
-      _this.bookables = [{
-        title: "Cheap Villa",
-        content: "A very cheap villa"
-      }, {
-        title: "Cheap Villa 2",
-        content: "A very cheap villa 2"
-      }, {
-        title: "Cheap Villa 3",
-        content: "A very cheap villa 3"
-      }, {
-        title: "Cheap Villa 4",
-        content: "A very cheap villa 4"
-      }, {
-        title: "Cheap Villa 5",
-        content: "A very cheap villa 5"
-      }];
-    }, 500);
+    var p = new Promise(function (resolve, reject) {});
+    var request = axios.get("api/bookables").then(function (response) {
+      _this.bookables = response.data;
+    });
   }
 });
 
@@ -6513,7 +6499,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card[data-v-665ee471] {\n    box-shadow : 0 0 12px rgba(0, 0, 0, .2);\n}\n", ""]);
+exports.push([module.i, "\n.card[data-v-665ee471] {\n    box-shadow : 0 0 12px rgba(0, 0, 0, .2);\n    margin-bottom: 2rem;\n    height: calc(100% - 2rem);\n}\n", ""]);
 
 // exports
 
@@ -38096,11 +38082,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card mb-4" }, [
+  return _c("div", { staticClass: "card" }, [
     _c("div", { staticClass: "card-body" }, [
       _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.itemTitle))]),
       _vm._v(" "),
-      _c("p", { staticClass: "card-text" }, [_vm._v(_vm._s(_vm.itemContent))])
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(_vm._s(_vm.itemDescription))
+      ])
     ])
   ])
 }
@@ -38144,7 +38132,7 @@ var render = function() {
                       _c("bookable-list-item", {
                         attrs: {
                           "item-title": bookable.title,
-                          "item-content": bookable.content,
+                          "item-description": bookable.description,
                           price: 1000
                         }
                       })
